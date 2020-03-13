@@ -1,0 +1,26 @@
+{
+  "name": "covid-19-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ernstoarllano/covid-19-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ernstoarllano/covid-19-tracker/issues"
+  },
+  "homepage": "https://github.com/ernstoarllano/covid-19-tracker#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "next": "^9.3.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "styled-components": "^5.0.1"
+  }
+}
