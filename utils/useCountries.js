@@ -3,18 +3,30 @@ import axios from 'axios'
 
 const useCountries = endpoint => {
   const [countries, setCountries] = useState()
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState()
 
   useEffect(() => {
     const fetchCountries = async () => {
-      const res = await axios(endpoint)
+      setLoading(true)
+      setError()
 
-      setCountries(res.data.countries)
+      await axios
+        .get(endpoint)
+        .then(res => setCountries(res.data.countries))
+        .catch(err => setError(err))
+
+      setLoading(false)
     }
 
     fetchCountries()
-  }, [])
+  }, [endpoint])
 
-  return countries
+  return {
+    countries,
+    loading,
+    error
+  }
 }
 
 export default useCountries

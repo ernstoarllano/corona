@@ -1,10 +1,12 @@
+import Card from './Card'
+
 const Deaths = ({ data }) => {
   const { deaths } = data
 
   return (
-    <div>
-      <p>Deaths: {deaths.value}</p>
-    </div>
+    <Card>
+      <p>Deaths: {deaths.value.toLocaleString()}</p>
+    </Card>
   )
 }
 

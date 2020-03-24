@@ -1,10 +1,12 @@
+import Card from './Card'
+
 const Recovered = ({ data }) => {
   const { recovered } = data
 
   return (
-    <div>
-      <p>Recovered: {recovered.value}</p>
-    </div>
+    <Card>
+      <p>Recovered: {recovered.value.toLocaleString()}</p>
+    </Card>
   )
 }
 

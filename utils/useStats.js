@@ -3,18 +3,30 @@ import axios from 'axios'
 
 const useStats = endpoint => {
   const [stats, setStats] = useState()
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState()
 
   useEffect(() => {
     const fetchStats = async () => {
-      const res = await axios(endpoint)
+      setLoading(true)
+      setError()
 
-      setStats(res.data)
+      await axios
+        .get(endpoint)
+        .then(res => setStats(res.data))
+        .catch(err => setError(err))
+
+      setLoading(false)
     }
 
     fetchStats()
-  }, [])
+  }, [endpoint])
 
-  return stats
+  return {
+    stats,
+    loading,
+    error
+  }
 }
 
 export default useStats

@@ -1,10 +1,12 @@
+import Card from './Card'
+
 const Confirmed = ({ data }) => {
   const { confirmed } = data
 
   return (
-    <div>
-      <p>Confirmed: {confirmed.value}</p>
-    </div>
+    <Card>
+      <p>Confirmed: {confirmed.value.toLocaleString()}</p>
+    </Card>
   )
 }
 
