@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import useCountries from '../utils/useCountries'
+import useArchives from '../utils/useArchives'
 import Stats from '../components/Stats'
+import Chart from '../components/Chart'
 
 const CountrySelector = () => {
-  const { countries } = useCountries('https://covid19.mathdro.id/api/countries')
+  const { countries } = useCountries('https://corona.lmao.ninja/countries')
+  const { archives, loading, error } = useArchives()
   const [state, setState] = useState({
     country: '',
     slug: ''
@@ -23,10 +26,10 @@ const CountrySelector = () => {
             }
           >
             <option>Select Country</option>
-            {countries.map(({ name, iso2 }) => {
+            {countries.map(({ country }) => {
               return (
-                <option key={name} value={iso2}>
-                  {name}
+                <option key={country} value={country}>
+                  {country}
                 </option>
               )
             })}
@@ -43,6 +46,7 @@ const CountrySelector = () => {
       ) : (
         <span>Waiting</span>
       )}
+      <Chart data={archives} />
     </>
   )
 }

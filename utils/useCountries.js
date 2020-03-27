@@ -13,7 +13,7 @@ const useCountries = endpoint => {
 
       await axios
         .get(endpoint)
-        .then(res => setCountries(res.data.countries))
+        .then(res => setCountries(res.data))
         .catch(err => setError(err))
 
       setLoading(false)
