@@ -1,13 +1,13 @@
 import Layout from '../components/Layout'
-import CountrySelector from '../components/CountrySelector'
 import Stats from '../components/Stats'
+import CountryOverview from '../components/CountryOverview'
 
 const Index = () => {
   return (
     <Layout>
-      <h2>Worldwide Stats</h2>
+      <h1>COVID-19</h1>
       <Stats />
-      <CountrySelector />
+      <CountryOverview />
     </Layout>
   )
 }

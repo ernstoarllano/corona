@@ -1,12 +1,18 @@
+import styled from 'styled-components'
 import Card from './Card'
 
+const Span = styled.span`
+  color: #1cb142;
+`
+
 const RecoveryRate = ({ data }) => {
-  const { confirmed, recovered } = data
-  const rate = parseFloat((recovered.value / confirmed.value) * 100).toFixed(2)
+  const { cases, recovered } = data
+  const rate = parseFloat((recovered / cases) * 100).toFixed(2)
 
   return (
     <Card>
-      <p>Recovery Rate: {rate}%</p>
+      <p>Recovery Rate</p>
+      <Span>{rate}%</Span>
     </Card>
   )
 }

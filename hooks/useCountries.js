@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const useCountries = endpoint => {
+const useCountries = sort => {
   const [countries, setCountries] = useState()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState()
+
+  const endpoint = sort
+    ? `https://corona.lmao.ninja/countries?sort=${sort}`
+    : 'https://corona.lmao.ninja/countries'
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -20,7 +24,7 @@ const useCountries = endpoint => {
     }
 
     fetchCountries()
-  }, [endpoint])
+  }, [])
 
   return {
     countries,

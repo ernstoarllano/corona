@@ -2,9 +2,14 @@ import styled from 'styled-components'
 
 const LayoutContainer = styled.main`
   width: 100%;
-  max-width: 1024px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  padding: 30px 15px;
+
+  @media (min-width: 1024px) {
+    padding: 30px;
+  }
 `
 
 const Layout = ({ children }) => {

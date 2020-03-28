@@ -23,5 +23,8 @@
     "react-dom": "^16.13.0",
     "recharts": "^1.8.5",
     "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.7"
   }
 }

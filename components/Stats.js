@@ -1,4 +1,4 @@
-import useStats from '../utils/useStats'
+import useStats from '../hooks/useStats'
 import Loading from './Loading'
 import Error from './Error'
 import Grid from './Grid'
@@ -8,7 +8,13 @@ import Recovered from './Recovered'
 import RecoveryRate from './RecoveryRate'
 import DeathRate from './DeathRate'
 
-const Stats = ({ endpoint = 'https://covid19.mathdro.id/api' }) => {
+const Stats = ({ country }) => {
+  const endpoint = country
+    ? `https://corona.lmao.ninja/countries/${country}`
+    : 'https://corona.lmao.ninja/all'
+
+  console.log(country)
+
   const { stats, loading, error } = useStats(endpoint)
 
   if (loading) return <Loading />

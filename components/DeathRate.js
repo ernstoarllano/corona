@@ -1,12 +1,18 @@
+import styled from 'styled-components'
 import Card from './Card'
 
+const Span = styled.span`
+  color: #6236ff;
+`
+
 const DeathRate = ({ data }) => {
-  const { confirmed, deaths } = data
-  const rate = parseFloat((deaths.value / confirmed.value) * 100).toFixed(2)
+  const { cases, deaths } = data
+  const rate = parseFloat((deaths / cases) * 100).toFixed(2)
 
   return (
     <Card>
-      <p>Mortality Rate: {rate}%</p>
+      <p>Mortality Rate</p>
+      <Span>{rate}%</Span>
     </Card>
   )
 }
