@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import useStats from '../hooks/useStats'
 import Loading from './Loading'
 import Error from './Error'
@@ -7,6 +8,15 @@ import Deaths from './Deaths'
 import Recovered from './Recovered'
 import RecoveryRate from './RecoveryRate'
 import DeathRate from './DeathRate'
+
+const StatsContainer = styled.section`
+  margin-bottom: 30px;
+
+  @media (min-width: 1024px) {
+    margin-bottom: 120px;
+    text-align: center;
+  }
+`
 
 const Stats = ({ country }) => {
   const endpoint = country
@@ -23,13 +33,16 @@ const Stats = ({ country }) => {
   return (
     <>
       {stats && (
-        <Grid>
-          <Confirmed data={stats} />
-          <Deaths data={stats} />
-          <Recovered data={stats} />
-          <RecoveryRate data={stats} />
-          <DeathRate data={stats} />
-        </Grid>
+        <StatsContainer>
+          <h2>Worldwide Statistics</h2>
+          <Grid>
+            <Confirmed data={stats} />
+            <Deaths data={stats} />
+            <Recovered data={stats} />
+            <RecoveryRate data={stats} />
+            <DeathRate data={stats} />
+          </Grid>
+        </StatsContainer>
       )}
     </>
   )

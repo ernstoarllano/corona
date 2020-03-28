@@ -3,7 +3,12 @@
 :root {
   --primary-1: #817c9b;
   --primary-2: #1a1053;
+  --primary-3: #6236ff;
+
   --accent-1: #f9fcff;
+  --accent-2: #f9345e;
+
+  --white: #ffffff;
 }
 
 html {
@@ -17,10 +22,12 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
+  line-height: 1.2;
   color: var(--primary-1);
-  background-color: var(--accent-1);
+  background-color: var(--white);
 }
 
 h1,
@@ -30,9 +37,119 @@ h4,
 h5,
 h6 {
   margin-top: 0;
+}
+
+h1,
+h2 {
   font-weight: 600;
+  color: var(--primary-2);
 }
 
 h1 {
-  color: var(--primary-2);
+  font-size: 80px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3,
+h4 {
+  font-weight: 500;
+}
+
+h5 {
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--accent-2);
+}
+
+.st0 {
+  fill: none;
+  stroke: #3b3858;
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+.st1 {
+  fill: #64e5f9;
+}
+
+.st2 {
+  fill: none;
+  stroke: #3b3858;
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+.st3 {
+  fill: #ff6496;
+}
+
+.st4 {
+  display: none;
+}
+
+.st5,
+.st6 {
+  display: inline;
+}
+
+.st6 {
+  fill: #ff6496;
+}
+
+.st7,
+.st8 {
+  fill: none;
+  stroke: #3b3858;
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+.st8 {
+  stroke: #ff6496;
+  stroke-width: 24;
+}
+
+.st9,
+.st10 {
+  fill: none;
+  stroke: #3b3858;
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+.st10 {
+  stroke: #64e5f9;
+}
+
+.st11 {
+  fill: #3b3858;
+}
+
+.st12,
+.st13 {
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+.st12 {
+  stroke: #3b3858;
+}
+
+.st13 {
+  stroke: #ffffff;
 }

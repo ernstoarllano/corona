@@ -5,14 +5,9 @@ const CountriesList = styled.ul`
   margin-top: 30px;
   margin-bottom: 0;
   padding-left: 0;
-  height: 500px;
+  height: 300px;
   list-style-type: none;
   overflow-y: scroll;
-  scrollbar-color: dark;
-
-  @media (min-width: 1024px) {
-    height: 800px;
-  }
 `
 
 const CountriesListItem = styled.li`

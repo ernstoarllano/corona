@@ -8,7 +8,7 @@ const LayoutContainer = styled.main`
   padding: 30px 15px;
 
   @media (min-width: 1024px) {
-    padding: 30px;
+    padding: 120px 30px;
   }
 `
 
