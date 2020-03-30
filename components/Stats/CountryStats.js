@@ -8,16 +8,16 @@ import StateSelector from '../State/StateSelector'
 
 const CardGrid = styled.section`
   padding: 30px;
+  background-color: white;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
 
   @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-gap: 60px;
     padding: 60px;
-    background-color: white;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-      0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    border-radius: 20px;
   }
 `
 
@@ -31,7 +31,7 @@ const ChartsGrid = styled.div`
 
 const CountryStats = ({ country }) => {
   return (
-    <Section id="countries" background="seperator">
+    <Section id="countries" background="confirmed">
       <h2>Filter Statistics By Country</h2>
       <CardGrid>
         <aside>

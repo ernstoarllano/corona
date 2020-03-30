@@ -5,8 +5,8 @@ import Coronavirus from '../Icons/Coronavirus'
 import Down from '../Icons/Down'
 
 const HeroFlexContainer = styled.div`
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   @media (min-width: 1024px) {
     display: flex;
@@ -14,6 +14,13 @@ const HeroFlexContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     padding-top: 120px;
+    padding-bottom: 60px;
+  }
+`
+
+const SVGContainer = styled.div`
+  @media (min-width: 1024px) {
+    width: 33.3333333333%;
   }
 `
 
@@ -37,7 +44,9 @@ const Hero = () => {
             (1 meter or 3 feet) with people who are unwell.
           </p>
         </HeroContent>
-        <Coronavirus />
+        <SVGContainer>
+          <Coronavirus />
+        </SVGContainer>
       </HeroFlexContainer>
       <Down width={50} />
     </Section>

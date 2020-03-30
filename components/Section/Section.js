@@ -10,6 +10,10 @@ const SectionContainer = styled.section`
   @media (min-width: 1024px) {
     padding: 60px 90px;
   }
+
+  h2 {
+    margin-bottom: 15px;
+  }
 `
 
 const Section = ({ id, align, background, children }) => {

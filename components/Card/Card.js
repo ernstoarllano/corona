@@ -6,8 +6,6 @@ const CardContainer = styled.div`
   align-items: center;
   width: 100%;
   margin-bottom: 30px;
-  margin-left: 15px;
-  margin-right: 15px;
   padding: 40px 30px;
   font-weight: 500;
   color: #1a1053;
@@ -18,6 +16,8 @@ const CardContainer = styled.div`
 
   @media (min-width: 1024px) {
     width: ${({ width }) => `calc(${width}% - 30px)` || '100%'};
+    margin-left: 15px;
+    margin-right: 15px;
 
     &:nth-child(4),
     &:nth-child(5) {

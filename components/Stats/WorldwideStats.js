@@ -30,6 +30,7 @@ const WorldwideStats = () => {
       {stats && (
         <Section id="worldwide" align="center">
           <h2>Worldwide Statistics</h2>
+          <p>This data changes rapidly, so what’s shown may be out of date.</p>
           <CenterCards>
             <Confirmed data={stats} />
             <Recovered data={stats} />
