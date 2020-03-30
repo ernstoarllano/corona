@@ -1,11 +1,14 @@
-import React from 'react'
 import AppContextProvider from '../context/Context'
+import { ThemeProvider } from 'styled-components'
+import theme from '../theme'
 import '../styles.css'
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <AppContextProvider>
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </AppContextProvider>
   )
 }

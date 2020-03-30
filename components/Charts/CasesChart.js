@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import useArchives from '../hooks/useArchives'
-import Loading from './Loading'
-import Error from './Error'
+import useArchives from '../../hooks/useArchives'
+import Loading from '../Global/Loading'
+import Error from '../Global/Error'
 import {
   ResponsiveContainer,
   AreaChart,
@@ -21,9 +21,7 @@ const ChartContainer = styled.div`
 `
 
 const CasesChart = ({ country }) => {
-  const endpoint = country
-    ? `https://corona.lmao.ninja/v2/historical/${country}`
-    : 'https://corona.lmao.ninja/v2/historical'
+  const endpoint = `https://corona.lmao.ninja/v2/historical/${country}`
 
   const { archives, loading, error } = useArchives(endpoint)
 
@@ -50,7 +48,7 @@ const CasesChart = ({ country }) => {
 
   return (
     <ChartContainer>
-      <h4>Total Cases</h4>
+      <h6>Total Cases</h6>
       <ResponsiveContainer height={200}>
         <AreaChart data={archives} barSize={3}>
           <defs>
@@ -75,7 +73,7 @@ const CasesChart = ({ country }) => {
           />
           <CartesianGrid
             vertical={false}
-            strokeDasharray={4}
+            strokeDasharray="4 4"
             strokeOpacity={0.5}
           />
           <Tooltip

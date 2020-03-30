@@ -1,5 +1,7 @@
 import styled from 'styled-components'
-import useCountries from '../hooks/useCountries'
+import useCountries from '../../hooks/useCountries'
+import Loading from '../Global/Loading'
+import Error from '../Global/Error'
 
 const CountriesList = styled.ul`
   margin-top: 30px;
@@ -29,7 +31,10 @@ const CountriesListItem = styled.li`
 `
 
 const CountryTotals = () => {
-  const { countries } = useCountries('cases')
+  const { countries, loading, error } = useCountries('cases')
+
+  if (loading) return <Loading />
+  if (error) return <Error />
 
   return (
     <>
