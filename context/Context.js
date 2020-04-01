@@ -4,15 +4,20 @@ export const AppContext = createContext()
 
 const AppContextProvider = ({ children }) => {
   const [state, setState] = useState({
-    country: 'USA'
+    country: 'USA',
+    countryState: 'California'
   })
 
   const setCountry = country => {
     setState({ ...state, country })
   }
 
+  const setCountryState = countryState => {
+    setState({ ...state, countryState })
+  }
+
   return (
-    <AppContext.Provider value={{ state, setCountry }}>
+    <AppContext.Provider value={{ state, setCountry, setCountryState }}>
       {children}
     </AppContext.Provider>
   )

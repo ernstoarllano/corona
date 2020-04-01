@@ -37,8 +37,8 @@ const CountrySelector = () => {
                 defaultValue={state.country}
               >
                 <option disabled>Select Country</option>
-                {countries.map(({ country }) => (
-                  <option key={country} value={country}>
+                {countries.map(({ country, countryInfo: { iso3 } }) => (
+                  <option key={iso3} value={iso3}>
                     {country}
                   </option>
                 ))}

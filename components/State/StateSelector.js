@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import useStates from '../../hooks/useStates'
 import Loading from '../Global/Loading'
 import Error from '../Global/Error'
+import { AppContext } from '../../context/Context'
 
 const StateSelectorContainer = styled.div`
   margin-top: 30px;
@@ -35,19 +36,30 @@ const StateSelector = () => {
 
   return (
     <>
-      {states && (
-        <StateSelectorContainer>
-          <h3>Filter by State</h3>
-          <Select defaultValue="California">
-            <option disabled>Select Country</option>
-            {states.map(({ state }) => (
-              <option key={state} value={state}>
-                {state}
-              </option>
-            ))}
-          </Select>
-        </StateSelectorContainer>
-      )}
+      <AppContext.Consumer>
+        {({ state, setCountryState }) => {
+          return (
+            <>
+              {states && (
+                <StateSelectorContainer>
+                  <h3>Filter by State</h3>
+                  <Select
+                    onChange={e => setCountryState(e.target.value)}
+                    defaultValue={state.countryState}
+                  >
+                    <option disabled>Select Country</option>
+                    {states.map(({ state }) => (
+                      <option key={state} value={state}>
+                        {state}
+                      </option>
+                    ))}
+                  </Select>
+                </StateSelectorContainer>
+              )}
+            </>
+          )
+        }}
+      </AppContext.Consumer>
     </>
   )
 }

@@ -4,7 +4,7 @@ import CountrySelector from '../Country/CountrySelector'
 import CountryTotals from '../Country/CountryTotals'
 import CasesChart from '../Charts/CasesChart'
 import DeathsChart from '../Charts/DeathsChart'
-import StateSelector from '../State/StateSelector'
+import StatesChart from '../Charts/StatesChart'
 
 const CardGrid = styled.section`
   padding: 30px;
@@ -21,6 +21,15 @@ const CardGrid = styled.section`
   }
 `
 
+const Aside = styled.aside`
+  @media (min-width: 1024px) {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+`
+
 const ChartsGrid = styled.div`
   @media (min-width: 1024px) {
     display: grid;
@@ -34,21 +43,17 @@ const CountryStats = ({ country }) => {
     <Section id="countries" background="confirmed">
       <h2>Filter Statistics By Country</h2>
       <CardGrid>
-        <aside>
+        <Aside>
           <CountrySelector />
           <CountryTotals />
-        </aside>
+        </Aside>
         <div>
           <h3>{country} Statistics</h3>
           <ChartsGrid>
             <CasesChart country={country} />
             <DeathsChart country={country} />
           </ChartsGrid>
-          {country === 'USA' && (
-            <>
-              <StateSelector />
-            </>
-          )}
+          <StatesChart country={country} />
         </div>
       </CardGrid>
     </Section>
