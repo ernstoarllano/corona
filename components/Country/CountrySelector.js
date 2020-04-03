@@ -18,6 +18,10 @@ const Select = styled.select`
   border-radius: 9999px;
   appearance: none;
   outline: none;
+
+  @media (max-width: 1023px) {
+    margin-bottom: 30px;
+  }
 `
 
 const CountrySelector = () => {

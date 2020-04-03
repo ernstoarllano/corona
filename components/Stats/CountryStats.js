@@ -24,10 +24,23 @@ const CardGrid = styled.section`
 
 const Aside = styled.aside`
   @media (min-width: 1024px) {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 150px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background-repeat: no-repeat;
+    }
   }
 `
 
@@ -42,7 +55,15 @@ const ChartsGrid = styled.div`
 const CountryStats = ({ country, countryState }) => {
   return (
     <Section id="countries" background="confirmed">
-      <h2>Filter Statistics By Country</h2>
+      <h2 style={{ color: '#ffffff' }}>Flatten the Curve</h2>
+      <p style={{ marginBottom: 30, color: '#ffffff' }}>
+        Countries around the world are working to “flatten the curve” of the
+        coronavirus pandemic. Flattening the curve involves reducing the number
+        of new COVID-19 cases from one day to the next. This helps prevent
+        healthcare systems from becoming overwhelmed. When a country has fewer
+        new COVID-19 cases emerging today than it did on a previous day, that’s
+        a sign that the country is flattening the curve.
+      </p>
       <CardGrid>
         <Aside>
           <CountrySelector />

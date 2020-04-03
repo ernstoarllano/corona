@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Section from '../Section/Section'
 import HeroContent from './HeroContent'
 import Coronavirus from '../Icons/Coronavirus'
+import Button from '../Global/Button'
 import Down from '../Icons/Down'
 
 const HeroFlexContainer = styled.div`
@@ -13,7 +14,7 @@ const HeroFlexContainer = styled.div`
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    padding-top: 120px;
+    padding-top: 60px;
     padding-bottom: 60px;
   }
 `
@@ -43,6 +44,7 @@ const Hero = () => {
             frequently, avoiding touching your face, and avoiding close contact
             (1 meter or 3 feet) with people who are unwell.
           </p>
+          <Button href="#">Learn More</Button>
         </HeroContent>
         <SVGContainer>
           <Coronavirus />

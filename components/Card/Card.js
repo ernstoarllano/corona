@@ -25,6 +25,10 @@ const CardContainer = styled.div`
     }
   }
 
+  p {
+    margin-bottom: 0;
+  }
+
   span {
     font-size: 40px;
     font-weight: 600;

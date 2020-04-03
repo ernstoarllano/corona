@@ -31,6 +31,10 @@ const Select = styled.select`
   appearance: none;
   outline: none;
 
+  @media (max-width: 1023px) {
+    margin-top: 30px;
+  }
+
   @media (min-width: 1024px) {
     max-width: 400px;
   }
@@ -50,7 +54,7 @@ const StateSelector = () => {
             <>
               {states && (
                 <StateSelectorContainer>
-                  <h3>Filter by State</h3>
+                  <h3 style={{ marginBottom: 0 }}>Filter by State</h3>
                   <Select
                     onChange={e => setCountryState(e.target.value)}
                     defaultValue={state.countryState}

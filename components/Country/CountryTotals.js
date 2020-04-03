@@ -10,6 +10,14 @@ const CountriesList = styled.ul`
   height: 300px;
   list-style-type: none;
   overflow-y: scroll;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    height: 600px;
+  }
 `
 
 const CountriesListItem = styled.li`
