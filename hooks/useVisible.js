@@ -1,24 +1,24 @@
 import { useState, useEffect, useRef } from 'react'
 
 const useVisible = () => {
-  const [isVisible, setVisible] = useState(false)
+  const [isVisisble, setVisible] = useState(false)
   const ref = useRef()
 
-  const entries = ([entry]) => {
-    if (entry.isIntersecting) {
-      setVisible(true)
+  const callback = ([element]) => {
+    if (element.isIntersecting) {
+      setVisible(element.isIntersecting)
     }
   }
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries)
+    const observer = new IntersectionObserver(callback)
 
-    const el = ref.current
+    observer.observe(ref.current)
 
-    observer.observe(el)
+    return () => observer.unobserve(ref.current)
   }, [ref])
 
-  return { ref }
+  return [ref, isVisisble]
 }
 
 export default useVisible

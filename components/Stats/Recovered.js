@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import useVisible from '../../hooks/useVisible'
 import useIcrement from '../../hooks/useIncrement'
 import Card from '../Card/Card'
 
@@ -8,10 +9,17 @@ const Span = styled.span`
 `
 
 const Recovered = ({ data: { recovered } }) => {
-  const number = useIcrement(recovered)
+  const [ref, isVisble] = useVisible()
+  const number = useIcrement(recovered, isVisble)
 
   return (
-    <Card width={33.3333333333} color="recovered">
+    <Card
+      width={33.3333333333}
+      color="recovered"
+      ref={ref}
+      visible={isVisble}
+      delay={0.2}
+    >
       <p>Recovered</p>
       <Span>{recovered.toLocaleString()}</Span>
     </Card>

@@ -32,7 +32,7 @@ const Hero = () => {
         <HeroContent>
           <h5>COVID-19</h5>
           <h1>Slow the Spread</h1>
-          <h2>Stay at Home</h2>
+          <h2>#StayatHome</h2>
           <p>
             Coronavirus disease (COVID-19) is an infectious disease caused by a
             new virus.

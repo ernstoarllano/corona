@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import Card from '../Card/Card'
+import useVisible from '../../hooks/useVisible'
 import useIcrement from '../../hooks/useIncrement'
+import Card from '../Card/Card'
 
 const Span = styled.span`
   font-feature-settings: 'tnum';
@@ -8,10 +9,17 @@ const Span = styled.span`
 `
 
 const Deaths = ({ data: { deaths } }) => {
-  const number = useIcrement(deaths)
+  const [ref, isVisble] = useVisible()
+  const number = useIcrement(deaths, isVisble)
 
   return (
-    <Card width={33.3333333333} color="deaths">
+    <Card
+      width={33.3333333333}
+      color="deaths"
+      ref={ref}
+      visible={isVisble}
+      delay={0.4}
+    >
       <p>Deaths</p>
       <Span>{deaths.toLocaleString()}</Span>
     </Card>

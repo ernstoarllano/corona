@@ -27,7 +27,7 @@ const CountriesListItem = styled.li`
 
   span:first-child {
     display: inline-block;
-    width: 60px;
+    width: 80px;
     font-weight: 600;
     color: #1a1053;
   }

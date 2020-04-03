@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { forwardRef } from 'react'
 
 const CardContainer = styled.div`
   display: flex;
@@ -13,6 +14,11 @@ const CardContainer = styled.div`
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
+  opacity: ${({ visible }) => (visible ? 1 : 0)};
+  transform: ${({ visible }) =>
+    visible ? 'translateY(0)' : 'translateY(100%)'};
+  transition: all 0.35s ease-in-out;
+  transition-delay: ${({ delay }) => `${delay}s` || '0s'};
 
   @media (min-width: 1024px) {
     width: ${({ width }) => `calc(${width}% - 30px)` || '100%'};
@@ -36,12 +42,19 @@ const CardContainer = styled.div`
   }
 `
 
-const Card = ({ width, color, children }) => {
+// TODO: Need to find out why component returns as Anonymous in DevTools
+const Card = forwardRef(({ width, color, visible, delay, children }, ref) => {
   return (
-    <CardContainer width={width} color={color}>
+    <CardContainer
+      width={width}
+      color={color}
+      visible={visible}
+      delay={delay}
+      ref={ref}
+    >
       {children}
     </CardContainer>
   )
-}
+})
 
 export default Card

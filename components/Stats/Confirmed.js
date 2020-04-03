@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import useVisible from '../../hooks/useVisible'
 import useIcrement from '../../hooks/useIncrement'
 import Card from '../Card/Card'
 
@@ -8,10 +9,17 @@ const Span = styled.span`
 `
 
 const Confirmed = ({ data: { cases } }) => {
-  const number = useIcrement(cases)
+  const [ref, isVisble] = useVisible()
+  const number = useIcrement(cases, isVisble)
 
   return (
-    <Card width={33.3333333333} color="confirmed">
+    <Card
+      width={33.3333333333}
+      color="confirmed"
+      ref={ref}
+      visible={isVisble}
+      delay={0}
+    >
       <p>Confirmed</p>
       <Span>{cases.toLocaleString()}</Span>
     </Card>

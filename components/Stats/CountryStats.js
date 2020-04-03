@@ -13,6 +13,7 @@ const CardGrid = styled.section`
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
   border-radius: 20px;
+  overflow: hidden;
 
   @media (min-width: 1024px) {
     display: grid;
