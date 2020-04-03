@@ -8,6 +8,10 @@ const StateSelectorContainer = styled.div`
   margin-top: 30px;
 
   @media (min-width: 1024px) {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 60px;
   }
 `
@@ -26,6 +30,10 @@ const Select = styled.select`
   border-radius: 9999px;
   appearance: none;
   outline: none;
+
+  @media (min-width: 1024px) {
+    max-width: 400px;
+  }
 `
 
 const StateSelector = () => {
@@ -47,7 +55,7 @@ const StateSelector = () => {
                     onChange={e => setCountryState(e.target.value)}
                     defaultValue={state.countryState}
                   >
-                    <option disabled>Select Country</option>
+                    <option disabled>Select State</option>
                     {states.map(({ state }) => (
                       <option key={state} value={state}>
                         {state}

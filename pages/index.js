@@ -9,12 +9,12 @@ import Prevention from '../components/Prevention/Prevention'
 const Index = () => {
   return (
     <AppContext.Consumer>
-      {({ state: { country } }) => (
+      {({ state: { country, countryState } }) => (
         <>
           <Hero />
           <WorldwideStats />
           <SeperatorUp fill="#f9345e" />
-          <CountryStats country={country} />
+          <CountryStats country={country} countryState={countryState} />
           <SeperatorDown fill="#f9345e" />
           <Prevention />
         </>

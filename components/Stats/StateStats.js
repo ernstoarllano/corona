@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import useStates from '../../hooks/useStates'
+import useStateStats from '../../hooks/useStateStats'
 import Loading from '../Global/Loading'
 import Error from '../Global/Error'
 import Confirmed from './Confirmed'
@@ -18,32 +18,23 @@ const CenterCards = styled.div`
   }
 `
 
-const StateStats = ({ country }) => {
-  const { states, loading, error } = useStates()
+const StateStats = ({ countryState }) => {
+  const { state, loading, error } = useStateStats(countryState)
 
   if (loading) return <Loading />
   if (error) return <Error />
 
   return (
     <>
-      {country === 'USA' && (
-        <StatsContainer>
-          <h3>State Statistics</h3>
-          {states &&
-            states.map(stats => {
-              return (
-                <>
-                  <h4>{stats.state}</h4>
-                  <CenterCards>
-                    <Confirmed data={stats} />
-                    <Deaths data={stats} />
-                    <MortalityRate data={stats} />
-                  </CenterCards>
-                </>
-              )
-            })}
-        </StatsContainer>
-      )}
+      <StatsContainer>
+        {state && (
+          <CenterCards>
+            <Confirmed data={state} />
+            <Deaths data={state} />
+            <MortalityRate data={state} />
+          </CenterCards>
+        )}
+      </StatsContainer>
     </>
   )
 }
