@@ -21,7 +21,7 @@
   "homepage": "https://github.com/ernstoarllano/covid-19-tracker#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "next": "^9.3.0",
+    "next": "^9.3.4",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "recharts": "^1.8.5",
