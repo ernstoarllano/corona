@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 
 const useVisible = () => {
-  const [isVisisble, setVisible] = useState(false)
+  const [isVisible, setVisible] = useState(false)
   const ref = useRef()
 
   const callback = ([element]) => {
@@ -18,7 +18,7 @@ const useVisible = () => {
     return () => observer.unobserve(ref.current)
   }, [ref])
 
-  return [ref, isVisisble]
+  return [ref, isVisible]
 }
 
 export default useVisible
