@@ -13,4 +13,5 @@
 - [Next JS](https://nextjs.org/)
 - [styled-components](https://www.styled-components.com/)
 - [Recharts](http://recharts.org/en-US/)
+- [React Simple Maps](https://www.react-simple-maps.io/)
 - [axios](https://github.com/axios/axios)

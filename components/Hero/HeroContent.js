@@ -6,8 +6,12 @@ const HeroContentContainer = styled.div`
   }
 
   h1 {
-    margin-bottom: 0;
+    margin-bottom: 10px;
     line-height: 1;
+
+    @media (min-width: 1024px) {
+      margin-bottom: 0;
+    }
   }
 
   h2 {

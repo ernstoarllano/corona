@@ -2,13 +2,21 @@ import styled from 'styled-components'
 import theme from '../../theme'
 
 const SectionContainer = styled.section`
+  position: relative;
   padding: 30px 15px;
   text-align: ${({ align }) => align || 'left'};
   background-color: ${({ theme, background }) =>
     theme.colors[background] || theme.colors.white};
+  overflow: hidden;
 
   @media (min-width: 1024px) {
     padding: 60px 90px;
+  }
+
+  h2,
+  p {
+    position: relative;
+    z-index: 10;
   }
 
   h2 {
