@@ -5,6 +5,7 @@ import SeperatorDown from '../components/Global/SeperatorDown'
 import WorldwideStats from '../components/Stats/WorldwideStats'
 import CountryStats from '../components/Stats/CountryStats'
 import Prevention from '../components/Prevention/Prevention'
+import Footer from '../components/Footer/Footer'
 
 const Index = () => {
   return (
@@ -17,6 +18,8 @@ const Index = () => {
           <CountryStats country={country} countryState={countryState} />
           <SeperatorDown fill="#f9345e" />
           <Prevention />
+          <SeperatorUp fill="#f9345e" />
+          <Footer />
         </>
       )}
     </AppContext.Consumer>

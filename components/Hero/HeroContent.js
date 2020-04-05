@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
 const HeroContentContainer = styled.div`
+  position: relative;
+  z-index: 10;
+
   @media (min-width: 1024px) {
     width: 66.6666666667%;
   }
@@ -15,7 +18,11 @@ const HeroContentContainer = styled.div`
   }
 
   h2 {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+
+    @media (min-width: 1024px) {
+      margin-bottom: 60px;
+    }
   }
 
   p {

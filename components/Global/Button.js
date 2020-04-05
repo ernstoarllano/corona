@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Anchor = styled.a`
   display: inline-block;
-  padding: 15px 30px;
+  padding: 10px 30px;
   color: ${({ theme }) => theme.colors.white};
   text-decoration: none;
   background-color: ${({ theme }) => theme.colors.deaths};
@@ -10,7 +10,20 @@ const Anchor = styled.a`
 `
 
 const Button = ({ href, children }) => {
-  return <Anchor href={href}>{children}</Anchor>
+  const scrollTo = ({ target }) => {
+    const element = document.querySelector(target.getAttribute('href'))
+
+    element.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+    })
+  }
+
+  return (
+    <Anchor href={href} onClick={scrollTo}>
+      {children}
+    </Anchor>
+  )
 }
 
 export default Button

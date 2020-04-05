@@ -23,7 +23,7 @@ const MapContainer = styled.div`
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  opacity: 0.3;
+  opacity: 0.2;
 `
 
 const CenterCards = styled.div`
@@ -45,6 +45,13 @@ const WorldwideStats = () => {
   const geoUrl =
     'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json'
 
+  const formatDate = (timestamp) => {
+    const time = new Date(timestamp).getTime()
+    const date = new Date(time)
+
+    return date.toLocaleString()
+  }
+
   if (loading) return <Loading />
   if (error) return <Error />
 
@@ -53,7 +60,12 @@ const WorldwideStats = () => {
       {stats && countries && (
         <Section id="worldwide" align="center">
           <h2>Worldwide Statistics</h2>
-          <p>This data changes rapidly, so what’s shown may be out of date.</p>
+          <p style={{ marginBottom: 10 }}>
+            This data changes rapidly, so what’s shown may be out of date.
+          </p>
+          <p style={{ marginBottom: 30 }}>
+            Last Updated: {formatDate(stats.updated)}
+          </p>
           {isMediaQuery && (
             <MapContainer>
               <ComposableMap>

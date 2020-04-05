@@ -1,11 +1,14 @@
 import styled from 'styled-components'
+import useMediaQuery from '../../hooks/useMediaQuery'
 import Section from '../Section/Section'
 import HeroContent from './HeroContent'
 import Coronavirus from '../Icons/Coronavirus'
+import Blob from '../Icons/Blob'
 import Button from '../Global/Button'
 import Down from '../Icons/Down'
 
 const HeroFlexContainer = styled.div`
+  position: relative;
   padding-top: 30px;
   padding-bottom: 30px;
 
@@ -21,11 +24,14 @@ const HeroFlexContainer = styled.div`
 
 const SVGContainer = styled.div`
   @media (min-width: 1024px) {
+    position: relative;
     width: 33.3333333333%;
   }
 `
 
 const Hero = () => {
+  const { isMediaQuery } = useMediaQuery('(min-width: 1024px)')
+
   return (
     <Section id="hero">
       <HeroFlexContainer>
@@ -44,11 +50,14 @@ const Hero = () => {
             frequently, avoiding touching your face, and avoiding close contact
             (1 meter or 3 feet) with people who are unwell.
           </p>
-          <Button href="#">Learn More</Button>
+          <Button href="#worldwide">Learn More</Button>
         </HeroContent>
-        <SVGContainer>
-          <Coronavirus />
-        </SVGContainer>
+        {isMediaQuery && (
+          <SVGContainer>
+            <Coronavirus />
+            <Blob />
+          </SVGContainer>
+        )}
       </HeroFlexContainer>
       <Down width={50} />
     </Section>
