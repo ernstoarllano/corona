@@ -56,8 +56,9 @@ const StateSelector = () => {
                 <StateSelectorContainer>
                   <h3 style={{ marginBottom: 0 }}>Filter by State</h3>
                   <Select
-                    onChange={e => setCountryState(e.target.value)}
+                    onChange={(e) => setCountryState(e.target.value)}
                     defaultValue={state.countryState}
+                    aria-label="Filter by State"
                   >
                     <option disabled>Select State</option>
                     {states.map(({ state }) => (

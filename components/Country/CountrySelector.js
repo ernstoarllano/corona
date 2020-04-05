@@ -37,8 +37,9 @@ const CountrySelector = () => {
           <>
             {countries && (
               <Select
-                onChange={e => setCountry(e.target.value)}
+                onChange={(e) => setCountry(e.target.value)}
                 defaultValue={state.country}
+                aria-label="Filter by Country"
               >
                 <option disabled>Select Country</option>
                 {countries.map(({ country, countryInfo: { iso3 } }) => (
