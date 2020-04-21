@@ -35,7 +35,7 @@ const CenterCards = styled.div`
 `
 
 const WorldwideStats = () => {
-  const endpoint = 'https://corona.lmao.ninja/all'
+  const endpoint = 'https://corona.lmao.ninja/v2/all'
 
   const { stats, loading, error } = useStats(endpoint)
   const { countries } = useCountries()

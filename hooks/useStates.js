@@ -12,9 +12,9 @@ const useStates = () => {
       setError()
 
       await axios
-        .get('https://corona.lmao.ninja/states')
-        .then(res => setStates(res.data))
-        .catch(err => setError(err))
+        .get('https://corona.lmao.ninja/v2/states')
+        .then((res) => setStates(res.data))
+        .catch((err) => setError(err))
 
       setLoading(false)
     }
@@ -25,7 +25,7 @@ const useStates = () => {
   return {
     states,
     loading,
-    error
+    error,
   }
 }
 
