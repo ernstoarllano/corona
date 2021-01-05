@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/ernstoarllano/covid-19-tracker#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "d3-scale": "^3.2.1",
     "next": "^9.3.4",
     "react": "^16.13.0",
